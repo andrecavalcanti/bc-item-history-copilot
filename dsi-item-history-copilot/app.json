@@ -1,0 +1,34 @@
+{
+  "id": "ddd86527-cc20-480d-8c69-2c02cca67ddb",
+  "name": "DSI Item History Copilot",
+  "publisher": "Andre Cavalcanti",
+  "version": "1.0.0.0",
+  "brief": "Copilot feature that explains an item's inventory history.",
+  "description": "Adds an 'Explain inventory history' Copilot action to the Item Card. AL collects ledger entries and calculates totals; your own Azure OpenAI / Foundry deployment explains them in plain language.",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "26.0.0.0",
+  "application": "26.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "15.0",
+  "target": "Cloud",
+  "features": [
+    "NoImplicitWith",
+    "TranslationFile"
+  ]
+}
