@@ -13,25 +13,27 @@ codeunit 50102 "DSI Item History Builder"
         Result: JsonObject;
         Entries: JsonArray;
         EntriesShown: Integer;
+        OlderEntriesOmitted: Boolean;
     begin
         if MaxEntries <= 0 then
             MaxEntries := 50;
 
-        Entries := BuildRecentEntries(ItemNo, MaxEntries, EntriesShown);
+        Entries := BuildRecentEntries(ItemNo, MaxEntries, EntriesShown, OlderEntriesOmitted);
 
         Result.Add('itemNo', ItemNo);
         Result.Add('entriesShown', EntriesShown);
         Result.Add('maxEntries', MaxEntries);
-        Result.Add('olderEntriesOmitted', EntriesShown >= MaxEntries);
+        Result.Add('olderEntriesOmitted', OlderEntriesOmitted);
         Result.Add('totals', BuildTotals(ItemNo));
         Result.Add('totalsByLocation', BuildTotalsByLocation(ItemNo));
         Result.Add('entries', Entries);
         Result.WriteTo(Output);
     end;
 
-    local procedure BuildRecentEntries(ItemNo: Code[20]; MaxEntries: Integer; var EntriesShown: Integer) Entries: JsonArray
+    local procedure BuildRecentEntries(ItemNo: Code[20]; MaxEntries: Integer; var EntriesShown: Integer; var OlderEntriesOmitted: Boolean) Entries: JsonArray
     var
         ItemLedgerEntry: Record "Item Ledger Entry";
+        HasMoreEntries: Boolean;
     begin
         ItemLedgerEntry.ReadIsolation := IsolationLevel::ReadCommitted;
         ItemLedgerEntry.SetLoadFields("Entry No.", "Posting Date", "Entry Type", "Document Type",
@@ -45,7 +47,11 @@ codeunit 50102 "DSI Item History Builder"
         repeat
             Entries.Add(EntryToJson(ItemLedgerEntry));
             EntriesShown += 1;
-        until (ItemLedgerEntry.Next() = 0) or (EntriesShown >= MaxEntries);
+            HasMoreEntries := ItemLedgerEntry.Next() <> 0;
+        until (not HasMoreEntries) or (EntriesShown >= MaxEntries);
+
+        // Older entries are omitted only when another entry exists beyond the limit.
+        OlderEntriesOmitted := HasMoreEntries;
     end;
 
     local procedure EntryToJson(ItemLedgerEntry: Record "Item Ledger Entry") Entry: JsonObject

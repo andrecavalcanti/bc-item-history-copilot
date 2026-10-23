@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "bc28us (Docker container)",
+            "type": "al",
+            "request": "launch",
+            "environmentType": "OnPrem",
+            "server": "https://bc28us",
+            "serverInstance": "BC",
+            "port": 7049,
+            "authentication": "UserPassword",
+            "tenant": "default",
+            "startupObjectId": 30,
+            "startupObjectType": "Page",
+            "schemaUpdateMode": "ForceSync"
+        }
+    ]
+}

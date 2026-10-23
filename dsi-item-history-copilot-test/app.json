@@ -1,0 +1,51 @@
+{
+  "id": "dfa1ae48-87e8-42c1-894c-0789eb8a6db2",
+  "name": "DSI Item History Copilot Tests",
+  "publisher": "Andre Cavalcanti",
+  "version": "1.0.0.0",
+  "brief": "Automated tests for DSI Item History Copilot.",
+  "description": "AL Test Tool tests for the deterministic evidence builder used by the Explain inventory history Copilot feature.",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "ddd86527-cc20-480d-8c69-2c02cca67ddb",
+      "name": "DSI Item History Copilot",
+      "publisher": "Andre Cavalcanti",
+      "version": "1.0.0.0"
+    },
+    {
+      "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
+      "name": "Library Assert",
+      "publisher": "Microsoft",
+      "version": "27.0.0.0"
+    },
+    {
+      "id": "5d86850b-0d76-4eca-bd7b-951ad998e997",
+      "name": "Tests-TestLibraries",
+      "publisher": "Microsoft",
+      "version": "27.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "27.0.0.0",
+  "application": "27.0.0.0",
+  "idRanges": [
+    {
+      "from": 50150,
+      "to": 50199
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "16.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

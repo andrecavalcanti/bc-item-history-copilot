@@ -4,6 +4,8 @@
   "appFolders": [
     "dsi-item-history-copilot"
   ],
-  "testFolders": [],
+  "testFolders": [
+    "dsi-item-history-copilot-test"
+  ],
   "bcptTestFolders": []
 }

@@ -5,6 +5,9 @@
         },
         {
             "path": "dsi-item-history-copilot"
+        },
+        {
+            "path": "dsi-item-history-copilot-test"
         }
     ],
     "settings": {}
