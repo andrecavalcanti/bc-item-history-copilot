@@ -21,6 +21,7 @@ codeunit 50104 "DSI Capability Registration"
         CopilotCapability.RegisterCapability(
             Enum::"Copilot Capability"::"DSI Explain Item History",
             Enum::"Copilot Availability"::Preview,
+            Enum::"Copilot Billing Type"::"Custom Billed",
             LearnMoreUrlTxt);
     end;
 }
