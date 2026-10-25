@@ -12,5 +12,17 @@ permissionset 50100 "DSI Item Hist Copilt"
         codeunit "DSI Item History AI" = X,
         codeunit "DSI Capability Registration" = X,
         query "DSI Item Qty By Location" = X,
-        tabledata "Item Ledger Entry" = R;
+        tabledata "Item Ledger Entry" = R,
+        // Drop-ship investigator agent
+        tabledata "DSI Drop Ship Finding" = RIM,
+        table "DSI Drop Ship Finding" = X,
+        tabledata "Sales Line" = R,
+        tabledata "Purchase Line" = R,
+        query "DSI Drop Ship Imbalance API" = X,
+        page "DSI Drop Ship Entries API" = X,
+        page "DSI Drop Ship Sales Lines API" = X,
+        page "DSI Drop Ship Purch Lines API" = X,
+        page "DSI Drop Ship Finding API" = X,
+        page "DSI Drop Ship Findings" = X,
+        codeunit "DSI Finding Review" = X;
 }
