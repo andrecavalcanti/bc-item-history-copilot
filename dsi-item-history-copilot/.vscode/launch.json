@@ -14,6 +14,36 @@
             "startupObjectId": 30,
             "startupObjectType": "Page",
             "schemaUpdateMode": "ForceSync"
+        },
+        {
+            "name": "AL: Generated Snapshot request",
+            "request": "snapshotInitialize",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox",
+            "sessionId": 815405,
+            "breakOnNext": "WebClient",
+            "executionContext": "DebugAndProfile",
+            "tenant": "e180402f-3b71-4aba-84f7-fd92bcc97b1b"
+        },
+        {
+            "name": "AL: Generated Attach request",
+            "request": "attach",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox",
+            "sessionId": 815405,
+            "breakOnNext": "WebClient",
+            "breakOnError": "ExcludeTry",
+            "tenant": "e180402f-3b71-4aba-84f7-fd92bcc97b1b"
+        },
+        {
+            "name": "AL: Generated Download Symbols request",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox",
+            "tenant": "e180402f-3b71-4aba-84f7-fd92bcc97b1b"
         }
     ]
 }
