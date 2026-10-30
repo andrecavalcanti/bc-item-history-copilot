@@ -1,11 +1,11 @@
-codeunit 50100 "DSI Install"
+codeunit 50100 "BCIA Install"
 {
     Subtype = Install;
     Access = Internal;
 
     trigger OnInstallAppPerDatabase()
     var
-        CapabilityRegistration: Codeunit "DSI Capability Registration";
+        CapabilityRegistration: Codeunit "BCIA Capability Registration";
     begin
         CapabilityRegistration.RegisterCapability();
     end;

@@ -1,7 +1,7 @@
 /// <summary>
-/// How confident the agent is in its root-cause classification.
+/// How confident the agent is in its root-cause classification, for any problem type.
 /// </summary>
-enum 50102 "DSI Finding Confidence"
+enum 50102 "BCIA Finding Confidence"
 {
     Extensible = false;
 

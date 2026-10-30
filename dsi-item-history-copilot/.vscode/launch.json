@@ -44,6 +44,17 @@
             "environmentType": "Sandbox",
             "environmentName": "Sandbox",
             "tenant": "e180402f-3b71-4aba-84f7-fd92bcc97b1b"
+        },
+        {
+            "name": "BC online sandbox",
+            "type": "al",
+            "request": "launch",
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox_Dev",
+            "tenant": "e180402f-3b71-4aba-84f7-fd92bcc97b1b",
+            "startupObjectId": 30,
+            "startupObjectType": "Page",
+            "schemaUpdateMode": "ForceSync"
         }
     ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "dfa1ae48-87e8-42c1-894c-0789eb8a6db2",
-  "name": "DSI Item History Copilot Tests",
+  "name": "BC Investigation Assistant Tests",
   "publisher": "Andre Cavalcanti",
   "version": "1.0.0.0",
-  "brief": "Automated tests for DSI Item History Copilot.",
-  "description": "AL Test Tool tests for the deterministic evidence builder used by the Explain inventory history Copilot feature.",
+  "brief": "Automated tests for BC Investigation Assistant.",
+  "description": "AL Test Tool tests for the evidence builder, the problem modules and the investigation agent guard rails.",
   "privacyStatement": "",
   "EULA": "",
   "help": "",
@@ -13,7 +13,7 @@
   "dependencies": [
     {
       "id": "ddd86527-cc20-480d-8c69-2c02cca67ddb",
-      "name": "DSI Item History Copilot",
+      "name": "BC Investigation Assistant",
       "publisher": "Andre Cavalcanti",
       "version": "1.0.0.0"
     },

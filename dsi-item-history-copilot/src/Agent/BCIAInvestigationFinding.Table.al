@@ -1,14 +1,14 @@
 /// <summary>
-/// A root-cause finding proposed by the drop-ship investigator agent.
+/// A root-cause finding proposed by the investigation agent, for any problem type.
 /// The agent can only create records with status New. Reviewing, accepting and carrying out
 /// the fix are done by a person; the agent never changes ledger entries or documents.
 /// </summary>
-table 50101 "DSI Drop Ship Finding"
+table 50101 "BCIA Investigation Finding"
 {
-    Caption = 'DSI Drop Ship Finding';
+    Caption = 'BCIA Investigation Finding';
     DataClassification = CustomerContent;
-    LookupPageId = "DSI Drop Ship Findings";
-    DrillDownPageId = "DSI Drop Ship Findings";
+    LookupPageId = "BCIA Investigation Findings";
+    DrillDownPageId = "BCIA Investigation Findings";
 
     fields
     {
@@ -28,9 +28,9 @@ table 50101 "DSI Drop Ship Finding"
             Caption = 'Location Code';
             TableRelation = Location;
         }
-        field(4; "Imbalance Qty."; Decimal)
+        field(4; Quantity; Decimal)
         {
-            Caption = 'Imbalance Qty.';
+            Caption = 'Affected Quantity';
             DecimalPlaces = 0 : 5;
         }
         field(5; "Root Cause"; Text[2048])
@@ -45,11 +45,11 @@ table 50101 "DSI Drop Ship Finding"
         {
             Caption = 'Evidence';
         }
-        field(8; Confidence; Enum "DSI Finding Confidence")
+        field(8; Confidence; Enum "BCIA Finding Confidence")
         {
             Caption = 'Confidence';
         }
-        field(9; Status; Enum "DSI Finding Status")
+        field(9; Status; Enum "BCIA Finding Status")
         {
             Caption = 'Status';
             Editable = false;
@@ -65,6 +65,10 @@ table 50101 "DSI Drop Ship Finding"
             Caption = 'Reviewed At';
             Editable = false;
         }
+        field(12; "Problem Type"; Enum "BCIA Problem Type")
+        {
+            Caption = 'Problem Type';
+        }
     }
 
     keys
@@ -73,13 +77,20 @@ table 50101 "DSI Drop Ship Finding"
         {
             Clustered = true;
         }
-        key(ItemLocation; "Item No.", "Location Code", Status) { }
+        key(ProblemItemLocation; "Problem Type", "Item No.", "Location Code", Status) { }
     }
+
+    var
+        ProblemTypeMissingErr: Label 'Specify the problem type of the finding.';
 
     trigger OnInsert()
     var
-        FindingReview: Codeunit "DSI Finding Review";
+        FindingReview: Codeunit "BCIA Finding Review";
     begin
+        // Every finding must say which kind of problem it is about.
+        if "Problem Type" = "Problem Type"::" " then
+            Error(ProblemTypeMissingErr);
+
         // A new finding always starts unreviewed, whatever the caller sent.
         Status := Status::New;
         Clear("Reviewed By");

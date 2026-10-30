@@ -3,7 +3,7 @@
 /// Returns item/location combinations where drop-ship item ledger entries do not net to zero.
 /// The filter on netQuantity is applied to the summed value (HAVING), so balanced combinations are excluded in SQL.
 /// </summary>
-query 50101 "DSI Drop Ship Imbalance API"
+query 50101 "BCIA Drop Ship Imbalance API"
 {
     QueryType = API;
     APIPublisher = 'andreCavalcanti';
@@ -11,7 +11,7 @@ query 50101 "DSI Drop Ship Imbalance API"
     APIVersion = 'v1.0';
     EntityName = 'dropShipImbalance';
     EntitySetName = 'dropShipImbalances';
-    Caption = 'DSI Drop Ship Imbalances';
+    Caption = 'BCIA Drop Ship Imbalances';
     DataAccessIntent = ReadOnly;
 
     elements

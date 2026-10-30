@@ -1,8 +1,8 @@
-page 50100 "DSI Copilot Setup"
+page 50100 "BCIA Copilot Setup"
 {
-    Caption = 'DSI Copilot Setup';
+    Caption = 'BCIA Copilot Setup';
     PageType = Card;
-    SourceTable = "DSI Copilot Setup";
+    SourceTable = "BCIA Copilot Setup";
     ApplicationArea = All;
     UsageCategory = Administration;
     InsertAllowed = false;
@@ -61,7 +61,7 @@ page 50100 "DSI Copilot Setup"
 
                 trigger OnAction()
                 var
-                    ItemHistoryAI: Codeunit "DSI Item History AI";
+                    ItemHistoryAI: Codeunit "BCIA Item History AI";
                 begin
                     CurrPage.SaveRecord();
                     ItemHistoryAI.TestConnection();

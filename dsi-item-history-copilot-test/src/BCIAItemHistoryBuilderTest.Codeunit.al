@@ -2,7 +2,7 @@
 /// Tests for the deterministic part of the Copilot feature: the evidence JSON.
 /// No Azure OpenAI calls are made here, so the tests are fast, free and repeatable.
 /// </summary>
-codeunit 50150 "DSI Item History Builder Test"
+codeunit 50150 "BCIA Item History Builder Test"
 {
     Subtype = Test;
     TestPermissions = Disabled;
@@ -11,7 +11,7 @@ codeunit 50150 "DSI Item History Builder Test"
         Assert: Codeunit "Library Assert";
         LibraryInventory: Codeunit "Library - Inventory";
         LibraryUtility: Codeunit "Library - Utility";
-        HistoryBuilder: Codeunit "DSI Item History Builder";
+        HistoryBuilder: Codeunit "BCIA Item History Builder";
         IsInitialized: Boolean;
         LocationNotFoundErr: Label 'No drop-shipment line found for location %1 in totalsByLocation.', Comment = '%1 = Location Code';
 

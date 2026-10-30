@@ -1,13 +1,13 @@
 /// <summary>
-/// Where a person reviews the agent's findings and records the decision.
+/// Where a person reviews the agent's findings, for every problem type, and records the decision.
 /// </summary>
-page 50108 "DSI Drop Ship Findings"
+page 50108 "BCIA Investigation Findings"
 {
-    Caption = 'DSI Drop Ship Findings';
+    Caption = 'BCIA Investigation Findings';
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
-    SourceTable = "DSI Drop Ship Finding";
+    SourceTable = "BCIA Investigation Finding";
     SourceTableView = sorting("Entry No.") order(descending);
     Editable = false;
     InsertAllowed = false;
@@ -29,17 +29,21 @@ page 50108 "DSI Drop Ship Findings"
                     ToolTip = 'Specifies whether the finding is new, accepted, rejected or done.';
                     StyleExpr = StatusStyle;
                 }
+                field("Problem Type"; Rec."Problem Type")
+                {
+                    ToolTip = 'Specifies the kind of problem the finding is about, such as drop shipment or negative inventory.';
+                }
                 field("Item No."; Rec."Item No.")
                 {
-                    ToolTip = 'Specifies the item with the drop-ship imbalance.';
+                    ToolTip = 'Specifies the item the finding is about.';
                 }
                 field("Location Code"; Rec."Location Code")
                 {
-                    ToolTip = 'Specifies the location with the drop-ship imbalance.';
+                    ToolTip = 'Specifies the location the finding is about.';
                 }
-                field("Imbalance Qty."; Rec."Imbalance Qty.")
+                field(Quantity; Rec.Quantity)
                 {
-                    ToolTip = 'Specifies the net quantity of drop-ship entries that should have been zero.';
+                    ToolTip = 'Specifies the quantity affected by the problem, for example the drop-ship imbalance or the negative inventory.';
                 }
                 field(Confidence; Rec.Confidence)
                 {
@@ -87,7 +91,7 @@ page 50108 "DSI Drop Ship Findings"
 
                 trigger OnAction()
                 var
-                    FindingReview: Codeunit "DSI Finding Review";
+                    FindingReview: Codeunit "BCIA Finding Review";
                 begin
                     FindingReview.Accept(Rec);
                     CurrPage.Update(false);
@@ -102,7 +106,7 @@ page 50108 "DSI Drop Ship Findings"
 
                 trigger OnAction()
                 var
-                    FindingReview: Codeunit "DSI Finding Review";
+                    FindingReview: Codeunit "BCIA Finding Review";
                 begin
                     FindingReview.Reject(Rec);
                     CurrPage.Update(false);
@@ -117,7 +121,7 @@ page 50108 "DSI Drop Ship Findings"
 
                 trigger OnAction()
                 var
-                    FindingReview: Codeunit "DSI Finding Review";
+                    FindingReview: Codeunit "BCIA Finding Review";
                 begin
                     FindingReview.MarkDone(Rec);
                     CurrPage.Update(false);
@@ -128,7 +132,7 @@ page 50108 "DSI Drop Ship Findings"
                 ApplicationArea = All;
                 Caption = 'Item Ledger Entries';
                 Image = ItemLedger;
-                ToolTip = 'Open the drop-ship item ledger entries for this item and location.';
+                ToolTip = 'Open the item ledger entries for this item and location.';
 
                 trigger OnAction()
                 var
@@ -136,7 +140,8 @@ page 50108 "DSI Drop Ship Findings"
                 begin
                     ItemLedgerEntry.SetRange("Item No.", Rec."Item No.");
                     ItemLedgerEntry.SetRange("Location Code", Rec."Location Code");
-                    ItemLedgerEntry.SetRange("Drop Shipment", true);
+                    if Rec."Problem Type" = Rec."Problem Type"::DropShipment then
+                        ItemLedgerEntry.SetRange("Drop Shipment", true);
                     Page.Run(Page::"Item Ledger Entries", ItemLedgerEntry);
                 end;
             }

@@ -1,4 +1,4 @@
-"""Console chat with the Drop-Ship Investigator agent, with a human approval step.
+"""Console chat with the Investigation Assistant agent, with a human approval step.
 
 - Read tools run automatically.
 - Any other tool call stops and shows you the exact tool and arguments. Nothing is written to
@@ -130,10 +130,10 @@ def main() -> None:
 
     project = AIProjectClient(endpoint=endpoint, credential=DefaultAzureCredential())
     openai = project.get_openai_client()
-    agent_ref = {"name": os.getenv("AGENT_NAME", "drop-ship-investigator"), "type": "agent_reference"}
+    agent_ref = {"name": os.getenv("AGENT_NAME", "bc-investigation-assistant"), "type": "agent_reference"}
 
-    print("Drop-Ship Investigator. Ask a question, or press Enter on an empty line to quit.")
-    print("Example: Are there any drop-ship imbalances? Investigate the largest one.\n")
+    print("Investigation Assistant. Ask a question, or press Enter on an empty line to quit.")
+    print("Example: Is anything wrong with inventory? Investigate the largest problem.\n")
 
     previous_response_id = None
     while True:

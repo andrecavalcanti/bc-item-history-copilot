@@ -1,18 +1,18 @@
 /// <summary>
 /// API page exposed to the agent as an MCP tool.
 /// Read and create only: the agent can list findings (to avoid duplicates) and propose new ones.
-/// Modify and delete are not allowed here; status changes happen on the DSI Drop Ship Findings page.
+/// Modify and delete are not allowed here; status changes happen on the BCIA Investigation Findings page.
 /// </summary>
-page 50107 "DSI Drop Ship Finding API"
+page 50107 "BCIA Investigation Finding API"
 {
     PageType = API;
     APIPublisher = 'andreCavalcanti';
     APIGroup = 'itemHistory';
     APIVersion = 'v1.0';
-    EntityName = 'dropShipFinding';
-    EntitySetName = 'dropShipFindings';
-    Caption = 'DSI Drop Ship Findings';
-    SourceTable = "DSI Drop Ship Finding";
+    EntityName = 'investigationFinding';
+    EntitySetName = 'investigationFindings';
+    Caption = 'BCIA Investigation Findings';
+    SourceTable = "BCIA Investigation Finding";
     ODataKeyFields = SystemId;
     DelayedInsert = true;
     InsertAllowed = true;
@@ -34,9 +34,10 @@ page 50107 "DSI Drop Ship Finding API"
                 {
                     Editable = false;
                 }
+                field(problemType; Rec."Problem Type") { }
                 field(itemNo; Rec."Item No.") { }
                 field(locationCode; Rec."Location Code") { }
-                field(imbalanceQuantity; Rec."Imbalance Qty.") { }
+                field(quantity; Rec.Quantity) { }
                 field(rootCause; Rec."Root Cause") { }
                 field(proposedFix; Rec."Proposed Fix") { }
                 field(evidence; Rec.Evidence) { }

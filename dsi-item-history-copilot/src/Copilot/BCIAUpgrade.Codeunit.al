@@ -1,11 +1,11 @@
-codeunit 50101 "DSI Upgrade"
+codeunit 50101 "BCIA Upgrade"
 {
     Subtype = Upgrade;
     Access = Internal;
 
     trigger OnUpgradePerDatabase()
     var
-        CapabilityRegistration: Codeunit "DSI Capability Registration";
+        CapabilityRegistration: Codeunit "BCIA Capability Registration";
     begin
         CapabilityRegistration.RegisterCapability();
     end;

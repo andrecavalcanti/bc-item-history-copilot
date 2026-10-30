@@ -1,8 +1,10 @@
 /// <summary>
 /// Builds the evidence JSON sent to the model. No AI calls here: this part is deterministic
 /// and is the part to cover with AL Test Tool tests.
+/// The general part (entries and totals) is built here; problem-specific checks come from the
+/// problem modules (see enum "BCIA Problem Type"), under the "checks" key.
 /// </summary>
-codeunit 50102 "DSI Item History Builder"
+codeunit 50102 "BCIA Item History Builder"
 {
     Access = Public;
     InherentEntitlements = X;
@@ -14,6 +16,7 @@ codeunit 50102 "DSI Item History Builder"
         Entries: JsonArray;
         EntriesShown: Integer;
         OlderEntriesOmitted: Boolean;
+        ProblemModules: Codeunit "BCIA Problem Modules";
     begin
         if MaxEntries <= 0 then
             MaxEntries := 50;
@@ -26,6 +29,7 @@ codeunit 50102 "DSI Item History Builder"
         Result.Add('olderEntriesOmitted', OlderEntriesOmitted);
         Result.Add('totals', BuildTotals(ItemNo));
         Result.Add('totalsByLocation', BuildTotalsByLocation(ItemNo));
+        Result.Add('checks', ProblemModules.BuildItemChecks(ItemNo));
         Result.Add('entries', Entries);
         Result.WriteTo(Output);
     end;
@@ -88,7 +92,7 @@ codeunit 50102 "DSI Item History Builder"
 
     local procedure BuildTotalsByLocation(ItemNo: Code[20]) Locations: JsonArray
     var
-        QtyByLocation: Query "DSI Item Qty By Location";
+        QtyByLocation: Query "BCIA Item Qty By Location";
     begin
         QtyByLocation.SetRange(ItemNo, ItemNo);
         QtyByLocation.Open();

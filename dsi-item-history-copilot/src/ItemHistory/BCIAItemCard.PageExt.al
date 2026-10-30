@@ -1,10 +1,10 @@
-pageextension 50100 "DSI Item Card" extends "Item Card"
+pageextension 50100 "BCIA Item Card" extends "Item Card"
 {
     actions
     {
         addlast(Prompting)
         {
-            action(DSIExplainHistory)
+            action(BCIAExplainHistory)
             {
                 ApplicationArea = All;
                 Caption = 'Explain inventory history';
@@ -13,7 +13,7 @@ pageextension 50100 "DSI Item Card" extends "Item Card"
 
                 trigger OnAction()
                 var
-                    ExplainPage: Page "DSI Explain Item History";
+                    ExplainPage: Page "BCIA Explain Item History";
                 begin
                     ExplainPage.SetItem(Rec."No.");
                     ExplainPage.RunModal();

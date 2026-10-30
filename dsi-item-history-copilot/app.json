@@ -1,10 +1,10 @@
 {
   "id": "ddd86527-cc20-480d-8c69-2c02cca67ddb",
-  "name": "DSI Item History Copilot",
+  "name": "BC Investigation Assistant",
   "publisher": "Andre Cavalcanti",
   "version": "1.0.0.0",
-  "brief": "Copilot feature that explains an item's inventory history.",
-  "description": "Adds an 'Explain inventory history' Copilot action to the Item Card. AL collects ledger entries and calculates totals; your own Azure OpenAI / Foundry deployment explains them in plain language.",
+  "brief": "AI investigation of Business Central inventory problems, with Copilot and an MCP agent.",
+  "description": "Explains an item's inventory history with Copilot and lets a Foundry agent investigate problems such as drop-shipment imbalances and negative inventory through the Business Central MCP server. AL calculates the facts; the model explains them; a person approves any finding.",
   "privacyStatement": "",
   "EULA": "",
   "help": "",

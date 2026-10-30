@@ -1,6 +1,6 @@
-table 50100 "DSI Copilot Setup"
+table 50100 "BCIA Copilot Setup"
 {
-    Caption = 'DSI Copilot Setup';
+    Caption = 'BCIA Copilot Setup';
     DataClassification = SystemMetadata;
     DataPerCompany = false;
     Access = Internal;
@@ -43,9 +43,9 @@ table 50100 "DSI Copilot Setup"
     }
 
     var
-        ApiKeyStorageKeyTok: Label 'DSI-AOAI-ApiKey', Locked = true;
+        ApiKeyStorageKeyTok: Label 'BCIA-AOAI-ApiKey', Locked = true;
         AzureDomainTok: Label '.azure.com', Locked = true;
-        MissingSetupErr: Label 'Fill in the endpoint, deployment name and API key on the DSI Copilot Setup page first.';
+        MissingSetupErr: Label 'Fill in the endpoint, deployment name and API key on the BCIA Copilot Setup page first.';
 
     procedure GetSetup()
     begin

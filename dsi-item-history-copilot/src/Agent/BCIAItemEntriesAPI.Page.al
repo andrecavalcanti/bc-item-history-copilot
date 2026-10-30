@@ -1,18 +1,18 @@
 /// <summary>
 /// Read-only API page exposed to the agent as an MCP tool.
-/// Drop-ship item ledger entries with the order links the agent needs to trace a root cause.
+/// Item ledger entries with the order links and flags any problem module may need to trace a root cause.
+/// The agent filters it, for example on itemNo, locationCode, dropShipment or isOpen.
 /// </summary>
-page 50104 "DSI Drop Ship Entries API"
+page 50104 "BCIA Item Entries API"
 {
     PageType = API;
     APIPublisher = 'andreCavalcanti';
     APIGroup = 'itemHistory';
     APIVersion = 'v1.0';
-    EntityName = 'dropShipEntry';
-    EntitySetName = 'dropShipEntries';
-    Caption = 'DSI Drop Ship Entries';
+    EntityName = 'itemEntry';
+    EntitySetName = 'itemEntries';
+    Caption = 'BCIA Item Entries';
     SourceTable = "Item Ledger Entry";
-    SourceTableView = where("Drop Shipment" = const(true));
     ODataKeyFields = SystemId;
     DataAccessIntent = ReadOnly;
     Editable = false;
@@ -39,6 +39,8 @@ page 50104 "DSI Drop Ship Entries API"
                 field(quantity; Rec.Quantity) { }
                 field(remainingQuantity; Rec."Remaining Quantity") { }
                 field(isOpen; Rec.Open) { }
+                field(isPositive; Rec.Positive) { }
+                field(dropShipment; Rec."Drop Shipment") { }
                 field(sourceType; Rec."Source Type") { }
                 field(sourceNo; Rec."Source No.") { }
                 field(orderType; Rec."Order Type") { }

@@ -1,4 +1,4 @@
-"""Create (or add a new version of) the Drop-Ship Investigator agent in Microsoft Foundry.
+"""Create (or add a new version of) the Investigation Assistant agent in Microsoft Foundry.
 
 The agent uses the Business Central MCP server as its only tool. Read tools run without asking;
 every other tool, including creating a finding, needs a person's approval.
@@ -25,14 +25,18 @@ from dotenv import load_dotenv
 BC_MCP_SERVER_URL = "https://mcp.businesscentral.dynamics.com"
 
 # Tools that only read data. Names follow the BC pattern List_<EntitySetName>_<PAG|QRY><ID>.
-# Anything NOT in this list (including Create_DropShipFinding_PAG50107, and any tool with a name
+# Anything NOT in this list (including Create_InvestigationFinding_PAG50107, and any tool with a name
 # we did not expect) requires approval, so a wrong name fails safe: it asks instead of acting.
 READ_ONLY_TOOLS = [
+    # Shared
+    "List_ItemEntries_PAG50104",
+    "List_InvestigationFindings_PAG50107",
+    # Drop shipment module
     "List_DropShipImbalances_QRY50101",
-    "List_DropShipEntries_PAG50104",
     "List_DropShipSalesLines_PAG50105",
     "List_DropShipPurchaseLines_PAG50106",
-    "List_DropShipFindings_PAG50107",
+    # Negative inventory module
+    "List_NegativeInventoryLines_QRY50102",
 ]
 
 
@@ -64,7 +68,7 @@ def build_bc_mcp_tool() -> MCPTool:
     return MCPTool(
         server_label="business_central",
         server_url=BC_MCP_SERVER_URL,
-        server_description="Business Central drop-shipment data and findings.",
+        server_description="Business Central inventory data and investigation findings.",
         project_connection_id=required("MCP_CONNECTION_NAME"),
         headers=headers,
         require_approval=MCPToolRequireApproval(
@@ -73,9 +77,18 @@ def build_bc_mcp_tool() -> MCPTool:
     )
 
 
+def load_instructions() -> str:
+    """General instructions plus one section per problem module (agent/modules/*.md)."""
+    folder = Path(__file__).parent
+    parts = [(folder / "instructions.md").read_text(encoding="utf-8")]
+    for module in sorted((folder / "modules").glob("*.md")):
+        parts.append(module.read_text(encoding="utf-8"))
+    return "\n\n".join(parts)
+
+
 def main() -> None:
     load_dotenv()
-    instructions = (Path(__file__).parent / "instructions.md").read_text(encoding="utf-8")
+    instructions = load_instructions()
 
     project = AIProjectClient(
         endpoint=required("PROJECT_ENDPOINT"),
@@ -83,7 +96,7 @@ def main() -> None:
     )
 
     agent = project.agents.create_version(
-        agent_name=os.getenv("AGENT_NAME", "drop-ship-investigator"),
+        agent_name=os.getenv("AGENT_NAME", "bc-investigation-assistant"),
         definition=PromptAgentDefinition(
             model=required("MODEL_DEPLOYMENT"),
             instructions=instructions,
@@ -91,6 +104,8 @@ def main() -> None:
         ),
     )
     print(f"Agent ready: {agent.name} (version {agent.version})")
+    modules = sorted(p.stem for p in (Path(__file__).parent / "modules").glob("*.md"))
+    print(f"Problem modules: {', '.join(modules)}")
     print("Run 'python chat.py' to start an investigation.")
 
 

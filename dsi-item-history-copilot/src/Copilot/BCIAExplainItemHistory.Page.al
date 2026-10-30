@@ -1,4 +1,4 @@
-page 50103 "DSI Explain Item History"
+page 50103 "BCIA Explain Item History"
 {
     Caption = 'Explain inventory history';
     PageType = PromptDialog;
@@ -85,7 +85,7 @@ page 50103 "DSI Explain Item History"
 
     local procedure RunGeneration()
     var
-        ItemHistoryAI: Codeunit "DSI Item History AI";
+        ItemHistoryAI: Codeunit "BCIA Item History AI";
     begin
         AnswerText := ItemHistoryAI.Explain(ItemNo, UserQuestion);
     end;
