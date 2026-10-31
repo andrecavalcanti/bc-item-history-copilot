@@ -3,7 +3,7 @@
 /// The agent can only create records with status New. Reviewing, accepting and carrying out
 /// the fix are done by a person; the agent never changes ledger entries or documents.
 /// </summary>
-table 50101 "BCIA Investigation Finding"
+table 58001 "BCIA Investigation Finding"
 {
     Caption = 'BCIA Investigation Finding';
     DataClassification = CustomerContent;

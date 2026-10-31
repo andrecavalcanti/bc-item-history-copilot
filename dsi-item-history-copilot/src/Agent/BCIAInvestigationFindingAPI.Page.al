@@ -3,7 +3,7 @@
 /// Read and create only: the agent can list findings (to avoid duplicates) and propose new ones.
 /// Modify and delete are not allowed here; status changes happen on the BCIA Investigation Findings page.
 /// </summary>
-page 50107 "BCIA Investigation Finding API"
+page 58007 "BCIA Investigation Finding API"
 {
     PageType = API;
     APIPublisher = 'andreCavalcanti';

@@ -1,7 +1,7 @@
 /// <summary>
 /// Shared helpers for the investigation tests: creating exact item ledger situations and findings.
 /// </summary>
-codeunit 50153 "BCIA Test Library"
+codeunit 58053 "BCIA Test Library"
 {
     var
         LibraryUtility: Codeunit "Library - Utility";

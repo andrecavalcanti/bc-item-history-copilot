@@ -2,7 +2,7 @@
 /// Drop shipment module. Drop-ship receipts and shipments are posted together, so drop-ship
 /// item ledger entries must net to zero per item and location. Any other result is a problem.
 /// </summary>
-codeunit 50106 "BCIA Drop Ship Module" implements "BCIA Problem Module"
+codeunit 58006 "BCIA Drop Ship Module" implements "BCIA Problem Module"
 {
     Access = Public;
 

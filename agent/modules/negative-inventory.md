@@ -6,7 +6,7 @@ covers it. Open negative entries mean inventory went below zero, and costs on th
 provisional until they are covered.
 
 **Tools:**
-- List_NegativeInventoryLines_QRY50102 (detection): item/location combinations with open outbound
+- List_NegativeInventoryLines_QRY58002 (detection): item/location combinations with open outbound
   entries, with openNegativeQuantity (always negative) and entryCount.
 
 **Investigation steps:**

@@ -2,7 +2,7 @@
 /// Human review of agent findings, for every problem type: accept, reject or mark as done.
 /// Kept separate from the pages so the rules can be tested with the AL Test Tool.
 /// </summary>
-codeunit 50105 "BCIA Finding Review"
+codeunit 58005 "BCIA Finding Review"
 {
     Access = Public;
     Permissions = tabledata "BCIA Investigation Finding" = rm;

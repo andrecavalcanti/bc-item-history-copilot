@@ -1,4 +1,4 @@
-codeunit 50101 "BCIA Upgrade"
+codeunit 58001 "BCIA Upgrade"
 {
     Subtype = Upgrade;
     Access = Internal;

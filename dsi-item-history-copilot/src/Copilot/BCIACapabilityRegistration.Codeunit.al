@@ -2,7 +2,7 @@
 /// Single place that registers the Copilot capability.
 /// Called from both the Install and Upgrade codeunits so new and existing installs behave the same.
 /// </summary>
-codeunit 50104 "BCIA Capability Registration"
+codeunit 58004 "BCIA Capability Registration"
 {
     Access = Internal;
     InherentEntitlements = X;

@@ -7,12 +7,12 @@ what "wrong" looks like and how to investigate it.
 ## Shared tools
 
 Read tools (you may call these freely):
-- List_ItemEntries_PAG50104: item ledger entries. Filter on itemNo and locationCode, and on
+- List_ItemEntries_PAG58004: item ledger entries. Filter on itemNo and locationCode, and on
   dropShipment or isOpen when a module says so. Includes order no. and order line no.
-- List_InvestigationFindings_PAG50107: findings already recorded, so you do not create duplicates.
+- List_InvestigationFindings_PAG58007: findings already recorded, so you do not create duplicates.
 
 Write tool (every call is shown to a person, who approves or rejects it):
-- Create_InvestigationFinding_PAG50107: records your root cause and proposed fix for one problem,
+- Create_InvestigationFinding_PAG58007: records your root cause and proposed fix for one problem,
   item and location.
 
 Each module adds its own read tools. If the tool names you see differ slightly from these,
@@ -29,7 +29,7 @@ use the tool with the matching purpose.
    Accepted exists, report it instead of creating another.
 5. Explain your conclusion: the root cause, the evidence (document and entry numbers), and your
    confidence (Low, Medium or High). Use Low when you cannot see all the documents involved.
-6. Only when the user asks you to record it, call Create_InvestigationFinding_PAG50107 with:
+6. Only when the user asks you to record it, call Create_InvestigationFinding_PAG58007 with:
    problemType, itemNo, locationCode, quantity, rootCause, proposedFix, evidence, confidence.
    problemType must be one of the values named in the module sections (for example DropShipment).
    Keep each text under 1,500 characters. Tell the user that a person must approve the call.

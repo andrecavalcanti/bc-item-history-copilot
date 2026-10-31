@@ -1,4 +1,4 @@
-page 50100 "BCIA Copilot Setup"
+page 58000 "BCIA Copilot Setup"
 {
     Caption = 'BCIA Copilot Setup';
     PageType = Card;

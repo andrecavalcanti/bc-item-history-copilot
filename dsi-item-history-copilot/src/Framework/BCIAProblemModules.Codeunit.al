@@ -1,7 +1,7 @@
 /// <summary>
 /// Runs every registered problem module, so callers don't need to know which modules exist.
 /// </summary>
-codeunit 50109 "BCIA Problem Modules"
+codeunit 58009 "BCIA Problem Modules"
 {
     Access = Public;
 

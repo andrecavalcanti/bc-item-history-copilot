@@ -2,7 +2,7 @@
 /// Tests for the BC side of the investigation agent: the read tools it relies on,
 /// and the rules that keep its write access safe.
 /// </summary>
-codeunit 50151 "BCIA Investigation Agent Test"
+codeunit 58051 "BCIA Investigation Agent Test"
 {
     Subtype = Test;
     TestPermissions = Disabled;

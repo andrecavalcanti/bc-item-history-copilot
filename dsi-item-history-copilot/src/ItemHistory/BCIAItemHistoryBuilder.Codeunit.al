@@ -4,7 +4,7 @@
 /// The general part (entries and totals) is built here; problem-specific checks come from the
 /// problem modules (see enum "BCIA Problem Type"), under the "checks" key.
 /// </summary>
-codeunit 50102 "BCIA Item History Builder"
+codeunit 58002 "BCIA Item History Builder"
 {
     Access = Public;
     InherentEntitlements = X;

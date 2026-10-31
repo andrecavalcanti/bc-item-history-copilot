@@ -2,7 +2,7 @@
 /// Tests for the deterministic part of the Copilot feature: the evidence JSON.
 /// No Azure OpenAI calls are made here, so the tests are fast, free and repeatable.
 /// </summary>
-codeunit 50150 "BCIA Item History Builder Test"
+codeunit 58050 "BCIA Item History Builder Test"
 {
     Subtype = Test;
     TestPermissions = Disabled;

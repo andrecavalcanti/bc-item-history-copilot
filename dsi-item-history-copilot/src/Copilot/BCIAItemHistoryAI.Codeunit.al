@@ -2,7 +2,7 @@
 /// Calls your own Azure OpenAI / Foundry deployment through the Business Central AI module.
 /// The model only explains evidence that AL has already collected and totalled.
 /// </summary>
-codeunit 50103 "BCIA Item History AI"
+codeunit 58003 "BCIA Item History AI"
 {
     Access = Internal;
     InherentEntitlements = X;

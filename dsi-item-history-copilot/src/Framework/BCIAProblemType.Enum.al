@@ -3,7 +3,7 @@
 /// that implements "BCIA Problem Module". Used by the Copilot evidence and by investigation findings.
 /// Value names have no spaces because agents send them through the API (e.g. "DropShipment").
 /// </summary>
-enum 50103 "BCIA Problem Type" implements "BCIA Problem Module"
+enum 58003 "BCIA Problem Type" implements "BCIA Problem Module"
 {
     Extensible = true;
     Caption = 'BCIA Problem Type';

@@ -1,4 +1,4 @@
-codeunit 50100 "BCIA Install"
+codeunit 58000 "BCIA Install"
 {
     Subtype = Install;
     Access = Internal;

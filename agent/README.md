@@ -36,13 +36,13 @@ The agent never posts, changes or deletes ledger entries or documents. A person 
 
 | Object | Module | Purpose | MCP tool name |
 |---|---|---|---|
-| Page 50104 BCIA Item Entries API | Shared | Item ledger entries with order links and flags | `List_ItemEntries_PAG50104` |
-| Page 50107 BCIA Investigation Finding API | Shared | Existing findings, and creating new ones | `List_InvestigationFindings_PAG50107`, `Create_InvestigationFinding_PAG50107` |
-| Query 50101 BCIA Drop Ship Imbalance API | Drop shipment | Item/location combinations that don't net to zero | `List_DropShipImbalances_QRY50101` |
-| Page 50105 BCIA Drop Ship Sales Lines API | Drop shipment | Open drop-ship sales lines and linked purchase lines | `List_DropShipSalesLines_PAG50105` |
-| Page 50106 BCIA Drop Ship Purch Lines API | Drop shipment | Open drop-ship purchase lines and linked sales lines | `List_DropShipPurchaseLines_PAG50106` |
-| Query 50102 BCIA Negative Inventory API | Negative inventory | Open outbound entries not covered by stock | `List_NegativeInventoryLines_QRY50102` |
-| Page 50108 BCIA Investigation Findings | Shared | Human review | (not exposed) |
+| Page 58004 BCIA Item Entries API | Shared | Item ledger entries with order links and flags | `List_ItemEntries_PAG58004` |
+| Page 58007 BCIA Investigation Finding API | Shared | Existing findings, and creating new ones | `List_InvestigationFindings_PAG58007`, `Create_InvestigationFinding_PAG58007` |
+| Query 58001 BCIA Drop Ship Imbalance API | Drop shipment | Item/location combinations that don't net to zero | `List_DropShipImbalances_QRY58001` |
+| Page 58005 BCIA Drop Ship Sales Lines API | Drop shipment | Open drop-ship sales lines and linked purchase lines | `List_DropShipSalesLines_PAG58005` |
+| Page 58006 BCIA Drop Ship Purch Lines API | Drop shipment | Open drop-ship purchase lines and linked sales lines | `List_DropShipPurchaseLines_PAG58006` |
+| Query 58002 BCIA Negative Inventory API | Negative inventory | Open outbound entries not covered by stock | `List_NegativeInventoryLines_QRY58002` |
+| Page 58008 BCIA Investigation Findings | Shared | Human review | (not exposed) |
 
 All API objects use publisher `andreCavalcanti`, group `itemHistory`, version `v1.0`.
 
@@ -67,7 +67,7 @@ Add a SaaS configuration to `dsi-item-history-copilot/.vscode/launch.json`:
   "environmentType": "Sandbox",
   "environmentName": "Sandbox",
   "tenant": "<your BC tenant ID or domain>",
-  "startupObjectId": 50108,
+  "startupObjectId": 58008,
   "startupObjectType": "Page",
   "schemaUpdateMode": "ForceSync"
 }
@@ -98,12 +98,12 @@ You need the **MCP - Admin** permission set.
 
    | Object Type | Object ID | Allow Read | Allow Create | Allow Modify | Allow Delete | Allow Actions |
    |---|---|---|---|---|---|---|
-   | Query | 50101 | ✔ | | | | |
-   | Query | 50102 | ✔ | | | | |
-   | Page | 50104 | ✔ | | | | |
-   | Page | 50105 | ✔ | | | | |
-   | Page | 50106 | ✔ | | | | |
-   | Page | 50107 | ✔ | ✔ | | | |
+   | Query | 58001 | ✔ | | | | |
+   | Query | 58002 | ✔ | | | | |
+   | Page | 58004 | ✔ | | | | |
+   | Page | 58005 | ✔ | | | | |
+   | Page | 58006 | ✔ | | | | |
+   | Page | 58007 | ✔ | ✔ | | | |
 
 6. Choose **Validate** and fix any warnings, then turn **Active** on.
 7. Choose **Advanced → Connection String** and note the **TenantId**, **EnvironmentName** and **Company**.

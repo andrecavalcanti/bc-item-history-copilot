@@ -5,10 +5,10 @@ together, so drop-ship item ledger entries for an item and location always net t
 net quantity means something went wrong.
 
 **Tools:**
-- List_DropShipImbalances_QRY50101 (detection): item/location combinations whose drop-ship entries
+- List_DropShipImbalances_QRY58001 (detection): item/location combinations whose drop-ship entries
   do not net to zero, with netQuantity.
-- List_DropShipSalesLines_PAG50105: open drop-ship sales order lines and their linked purchase order line.
-- List_DropShipPurchaseLines_PAG50106: open drop-ship purchase order lines and their linked sales order line.
+- List_DropShipSalesLines_PAG58005: open drop-ship sales order lines and their linked purchase order line.
+- List_DropShipPurchaseLines_PAG58006: open drop-ship purchase order lines and their linked sales order line.
 
 **Investigation steps:**
 1. Read the item entries for the item and location with dropShipment = true. Group them by order no.

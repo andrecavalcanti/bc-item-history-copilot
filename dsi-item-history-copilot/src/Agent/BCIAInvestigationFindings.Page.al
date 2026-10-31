@@ -1,7 +1,7 @@
 /// <summary>
 /// Where a person reviews the agent's findings, for every problem type, and records the decision.
 /// </summary>
-page 50108 "BCIA Investigation Findings"
+page 58008 "BCIA Investigation Findings"
 {
     Caption = 'BCIA Investigation Findings';
     PageType = List;

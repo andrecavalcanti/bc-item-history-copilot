@@ -1,4 +1,4 @@
-table 50100 "BCIA Copilot Setup"
+table 58000 "BCIA Copilot Setup"
 {
     Caption = 'BCIA Copilot Setup';
     DataClassification = SystemMetadata;

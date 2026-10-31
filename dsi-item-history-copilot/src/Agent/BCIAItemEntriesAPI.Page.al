@@ -3,7 +3,7 @@
 /// Item ledger entries with the order links and flags any problem module may need to trace a root cause.
 /// The agent filters it, for example on itemNo, locationCode, dropShipment or isOpen.
 /// </summary>
-page 50104 "BCIA Item Entries API"
+page 58004 "BCIA Item Entries API"
 {
     PageType = API;
     APIPublisher = 'andreCavalcanti';

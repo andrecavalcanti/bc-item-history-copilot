@@ -1,4 +1,4 @@
-pageextension 50100 "BCIA Item Card" extends "Item Card"
+pageextension 58000 "BCIA Item Card" extends "Item Card"
 {
     actions
     {

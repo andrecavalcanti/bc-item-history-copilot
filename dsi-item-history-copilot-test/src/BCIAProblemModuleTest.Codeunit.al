@@ -2,7 +2,7 @@
 /// Tests for the investigation framework: every problem module plugs into the Copilot evidence
 /// and the system prompt, and each module reports exactly what it should.
 /// </summary>
-codeunit 50152 "BCIA Problem Module Test"
+codeunit 58052 "BCIA Problem Module Test"
 {
     Subtype = Test;
     TestPermissions = Disabled;

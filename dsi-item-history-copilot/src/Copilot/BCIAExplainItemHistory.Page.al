@@ -1,4 +1,4 @@
-page 50103 "BCIA Explain Item History"
+page 58003 "BCIA Explain Item History"
 {
     Caption = 'Explain inventory history';
     PageType = PromptDialog;

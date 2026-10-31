@@ -25,18 +25,18 @@ from dotenv import load_dotenv
 BC_MCP_SERVER_URL = "https://mcp.businesscentral.dynamics.com"
 
 # Tools that only read data. Names follow the BC pattern List_<EntitySetName>_<PAG|QRY><ID>.
-# Anything NOT in this list (including Create_InvestigationFinding_PAG50107, and any tool with a name
+# Anything NOT in this list (including Create_InvestigationFinding_PAG58007, and any tool with a name
 # we did not expect) requires approval, so a wrong name fails safe: it asks instead of acting.
 READ_ONLY_TOOLS = [
     # Shared
-    "List_ItemEntries_PAG50104",
-    "List_InvestigationFindings_PAG50107",
+    "List_ItemEntries_PAG58004",
+    "List_InvestigationFindings_PAG58007",
     # Drop shipment module
-    "List_DropShipImbalances_QRY50101",
-    "List_DropShipSalesLines_PAG50105",
-    "List_DropShipPurchaseLines_PAG50106",
+    "List_DropShipImbalances_QRY58001",
+    "List_DropShipSalesLines_PAG58005",
+    "List_DropShipPurchaseLines_PAG58006",
     # Negative inventory module
-    "List_NegativeInventoryLines_QRY50102",
+    "List_NegativeInventoryLines_QRY58002",
 ]
 
 

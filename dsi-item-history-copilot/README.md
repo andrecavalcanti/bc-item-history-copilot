@@ -16,5 +16,5 @@ for the Investigation Assistant agent.
 | `src/Setup` | Setup table and page (API key in IsolatedStorage) |
 | `src/Permissions` | `BCIA Investigation` permission set |
 
-All objects use the prefix **BCIA** (Business Central Investigation Assistant) and IDs 50100–50149.
-The test app uses IDs 50150–50199.
+All objects use the prefix **BCIA** (Business Central Investigation Assistant) and IDs 58000–58049.
+The test app uses IDs 58050–58099.

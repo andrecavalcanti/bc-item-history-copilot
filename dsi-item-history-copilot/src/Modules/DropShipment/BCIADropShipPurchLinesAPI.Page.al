@@ -2,7 +2,7 @@
 /// Read-only API page exposed to the agent as an MCP tool.
 /// Open drop-ship purchase order lines and the sales order line each one is linked to.
 /// </summary>
-page 50106 "BCIA Drop Ship Purch Lines API"
+page 58006 "BCIA Drop Ship Purch Lines API"
 {
     PageType = API;
     APIPublisher = 'andreCavalcanti';

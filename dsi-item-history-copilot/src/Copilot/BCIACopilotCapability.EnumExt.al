@@ -1,6 +1,6 @@
-enumextension 50100 "BCIA Copilot Capability" extends "Copilot Capability"
+enumextension 58000 "BCIA Copilot Capability" extends "Copilot Capability"
 {
-    value(50100; "BCIA Explain Item History")
+    value(58000; "BCIA Explain Item History")
     {
         Caption = 'Explain item inventory history';
     }

@@ -3,7 +3,7 @@
 /// Open outbound entries could not be applied to stock: inventory went below zero and no receipt has
 /// covered it yet. Returns their remaining (negative) quantity per item and location.
 /// </summary>
-query 50102 "BCIA Negative Inventory API"
+query 58002 "BCIA Negative Inventory API"
 {
     QueryType = API;
     APIPublisher = 'andreCavalcanti';

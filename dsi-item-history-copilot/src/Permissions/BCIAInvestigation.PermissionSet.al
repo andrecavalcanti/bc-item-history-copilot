@@ -1,4 +1,4 @@
-permissionset 50100 "BCIA Investigation"
+permissionset 58000 "BCIA Investigation"
 {
     Caption = 'BCIA Investigation Assistant';
     Assignable = true;

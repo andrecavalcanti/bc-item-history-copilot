@@ -2,7 +2,7 @@
 /// Negative inventory module. An outbound entry that could not be applied to stock stays open with a
 /// negative remaining quantity until a receipt covers it. Such entries mean inventory went below zero.
 /// </summary>
-codeunit 50107 "BCIA Negative Inventory Module" implements "BCIA Problem Module"
+codeunit 58007 "BCIA Negative Inventory Module" implements "BCIA Problem Module"
 {
     Access = Public;
 

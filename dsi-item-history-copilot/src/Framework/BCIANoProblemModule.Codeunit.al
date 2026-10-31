@@ -1,7 +1,7 @@
 /// <summary>
 /// Implementation for the blank problem type. Adds nothing, so the blank value is safe in loops.
 /// </summary>
-codeunit 50108 "BCIA No Problem Module" implements "BCIA Problem Module"
+codeunit 58008 "BCIA No Problem Module" implements "BCIA Problem Module"
 {
     Access = Internal;
 
